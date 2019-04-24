@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>都道府県API</title>
+</head>
+<body>
+        <div id="app">
+                {{ info }}
+              </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script>
+
+    new Vue({
+    el: '#app',
+    data () {
+      return {
+        info: null
+      }
+    },
+    mounted () {
+      var url = 'https://opendata.resas-portal.go.jp/api/v1/prefectures';
+      axios.get(url).then(response => (this.info = response))
+
+
+      var xhr= new XMLHttpRequest();
+      //新しく作成されたリクエストを初期化したり、既存のリクエストを再初期化したりします。
+
+      xhr.open('GET','../index.html')
+      xhr.setRequestHeader('X-API-KEY','GUg7et7BNeHPhCkOMWIMi6ANFd6kCoPzffIOFLwG')
+      xhr.send()
+
+      console.log(info)
+    }
+  })
+    </script>
+
+</body>
+</html>
