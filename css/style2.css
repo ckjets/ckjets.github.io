@@ -1,0 +1,71 @@
+@media screen and (max-width: 768px) {
+  #logo {
+    width:100%;
+  }
+
+  #title {
+    text-align: center;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}
+
+#header {
+  background-color: rgb(66, 95, 156);
+  color:white;
+}
+
+#title h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+.form-row {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.form-row a{
+  color: white;
+}
+
+.form-control input {
+  display: inline-block;
+  padding: 15px;
+}
+
+#btn {
+  background: lightblue;
+  padding:6px 12px;
+  margin-top: 24px;
+
+}
+
+#right-content {
+  float:right;
+}
+
+#right-content h3 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.form-check-label {
+  font-weight: bold;
+}
+
+#birth {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#whybirth {
+  font-size: 12px;
+}
+
+#terms {
+  font-size: 10px;
+}
