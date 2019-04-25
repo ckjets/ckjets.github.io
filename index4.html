@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>都道府県API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-        <div id="app">
-                {{ info }}
-              </div>
+  <div class="container mt-5">
+        <div class="justify-content-center"id="app">
+          <h1 class="mb-3">都道府県 人工比較グラフ</h1>
+          <h2 class="mb-3">都道府県</h2>
+                <ul v-for="apiresult in info.data.result" style="display: inline-block">
+                  <li style="list-style: none;">
+                      <input type="checkbox">{{ apiresult.prefName }}
+                  </li>
+              </ul>
+
+          <h2>グラフ</h2>
+          </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- <script src="js/main.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
 
     new Vue({
@@ -21,19 +34,17 @@
       }
     },
     mounted () {
+      //APIの取得
       var url = 'https://opendata.resas-portal.go.jp/api/v1/prefectures';
-      axios.get(url).then(response => (this.info = response))
+      axios.get(url ,{ headers: {'X-API-KEY': 'GUg7et7BNeHPhCkOMWIMi6ANFd6kCoPzffIOFLwG'}}).then(response => (this.info = response));
 
 
-      var xhr= new XMLHttpRequest();
-      //新しく作成されたリクエストを初期化したり、既存のリクエストを再初期化したりします。
+    },
+    method: {
 
-      xhr.open('GET','https://ckjets.github.io/index4.html')
-      xhr.setRequestHeader('X-API-KEY','GUg7et7BNeHPhCkOMWIMi6ANFd6kCoPzffIOFLwG')
-      xhr.send()
-    
     }
-  })
+  }
+  )
     </script>
 
 </body>
